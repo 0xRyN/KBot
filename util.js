@@ -1,25 +1,3 @@
-//Gets an array and a number, and stores
-
-// let arr = [
-//     {
-//         apy: 72,
-//         name: "Samir",
-//     },
-//     {
-//         apy: 22,
-//         name: "Hamid",
-//     },
-//     {
-//         apy: 10,
-//         name: "Rayan",
-//     },
-// ];
-
-// let obj = {
-//     apy: 57,
-//     name: "Inserted",
-// };
-
 const insert = (arr, obj) => {
     const val = obj.apy;
     let low = 0;
