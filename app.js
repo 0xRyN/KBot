@@ -18,20 +18,9 @@ client.on("interactionCreate", async (interaction) => {
 
 client.on("messageCreate", (msg) => {
     if (msg.author.id === client.application.id) return;
-    if (msg.content.substring(0, 2) === "K-") {
-        (async () => {
-            let res = await parse(msg.content.substring(2));
-            if (res.length === 0)
-                msg.reply("Token introuvable... Syntaxe : K-[DAPP]:[Token 1]");
-            else {
-                res.forEach((val) => {
-                    let res = `
-                    Voici des informations supplémentaires sur votre Token \n**D-APP** : ${val.dApp} \n**Chain** : ${val.chain} \n**Token** : ${val.token}\n**Specific Token** : ${val.specificToken} \n**APY(actualisée chaque 30mn)** : ${val.APY}%
-                    `;
-                    msg.reply(res);
-                });
-            }
-        })();
+    if (msg.content[0] === "!") {
+        let command = msg.content.substring(1);
+        parse(command, msg);
     }
 });
 
