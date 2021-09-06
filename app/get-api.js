@@ -1,7 +1,8 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const { GOOGLE_API_KEY } = require("./config/config.json");
 const { insert } = require("./util");
 fs = require("fs");
+
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 // Initialize the sheet - doc ID is the long id in the sheets URL
 

@@ -1,19 +1,14 @@
+require("dotenv").config();
 const { Client, Intents } = require("discord.js");
+const { parse } = require("./get-api.js");
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
-const { API_KEY } = require("./config/config.json");
-const { parse } = require("./get-api.js");
+
+const API_KEY = process.env.API_KEY;
 
 client.on("ready", () => {
-    console.log("We are ready, start coding !");
-});
-
-client.on("interactionCreate", async (interaction) => {
-    if (!interaction.isCommand()) return;
-    if (interaction.commandName === "ping") {
-        await interaction.reply("Pong!");
-    }
+    console.log("C'est prêt !");
 });
 
 client.on("messageCreate", (msg) => {
