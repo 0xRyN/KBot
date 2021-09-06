@@ -1,5 +1,5 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const { GOOGLE_API_KEY } = require("./config.json");
+const { GOOGLE_API_KEY } = require("./config/config.json");
 const { insert } = require("./util");
 fs = require("fs");
 

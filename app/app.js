@@ -2,7 +2,7 @@ const { Client, Intents } = require("discord.js");
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
-const { API_KEY } = require("./config.json");
+const { API_KEY } = require("./config/config.json");
 const { parse } = require("./getApi.js");
 
 client.on("ready", () => {

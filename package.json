@@ -2,10 +2,10 @@
     "name": "kaizenbot",
     "version": "1.0.0",
     "description": "A Kaizen Discord Bot",
-    "main": "app.js",
+    "main": "./app/app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node app.js"
+        "start": "node ./app/app.js"
     },
     "author": "Rayan",
     "license": "ISC",
