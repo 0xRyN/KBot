@@ -23,7 +23,7 @@ const initDoc = async () => {
 const getApi = async (dApp, token, msg) => {
     if (!doc) await initDoc();
     const rows = await sheet.getRows({
-        offset: 1,
+        offset: 0,
     });
     let res = [];
     rows.forEach((row) => {
