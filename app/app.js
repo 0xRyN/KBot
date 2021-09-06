@@ -3,7 +3,7 @@ const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 const { API_KEY } = require("./config/config.json");
-const { parse } = require("./getApi.js");
+const { parse } = require("./get-api.js");
 
 client.on("ready", () => {
     console.log("We are ready, start coding !");
