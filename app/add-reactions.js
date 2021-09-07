@@ -7,11 +7,10 @@ const channels = [
 ];
 
 const addReactions = async (msg) => {
-    console.log(typeof msg.channelId);
     if (channels.includes(msg.channelId)) {
-        await msg.react(":fire:");
-        await msg.react(":face_with_raised_eyebrow:");
-        await msg.react(":man_gesturing_no:");
+        await msg.react("🔥");
+        await msg.react("🤨");
+        await msg.react("🙅‍♂️");
     }
 };
 
