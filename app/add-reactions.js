@@ -9,8 +9,8 @@ const channels = [
 const addReactions = async (msg) => {
     if (channels.includes(msg.channelId)) {
         await msg.react("🔥");
-        await msg.react("🤨");
-        await msg.react("🙅‍♂️");
+        await msg.react("📝");
+        await msg.react("🤔");
     }
 };
 
