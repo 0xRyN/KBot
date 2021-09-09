@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Client, Intents } = require("discord.js");
 const { parse } = require("./get-api.js");
 const { addReactions } = require("./add-reactions");
+const { logMsg } = require("./log-msg");
 const client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
@@ -31,6 +32,7 @@ client.on("messageCreate", (msg) => {
     // Check if message is sent in specific channel and add reactions
 
     addReactions(msg);
+    logMsg(msg);
 });
 
 client.login(API_KEY);
