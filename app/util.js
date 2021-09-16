@@ -10,4 +10,11 @@ const insert = (arr, obj) => {
     arr.splice(low, 0, obj);
 };
 
+function copyClipboard(str) {
+    var proc = require("child_process").spawn("pbcopy");
+    proc.stdin.write(str);
+    proc.stdin.end();
+}
+
+exports.copyClipboard = copyClipboard;
 exports.insert = insert;

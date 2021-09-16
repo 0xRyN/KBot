@@ -1,5 +1,5 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const { insert } = require("./util");
+const { insert, copyClipboard } = require("./util");
 fs = require("fs");
 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
@@ -11,13 +11,26 @@ let sheet;
 
 const initDoc = async () => {
     //doc = new GoogleSpreadsheet("1fV3Enny4cLWAAJ3ETo_-nksW8XLLjPmLSv_vjhDLNaA"); RAYAN COPY
-    doc = new GoogleSpreadsheet("1OlLchnnjb-mU1sVDRpEiBMLc833T3HW6IyRT0_rqXOY");
+    try {
+        doc = new GoogleSpreadsheet(
+            "1OlLchnnjb-mU1sVDRpEiBMLc833T3HW6IyRT0_rqXOY"
+        );
 
-    doc.useApiKey(GOOGLE_API_KEY);
+        await doc.useServiceAccountAuth({
+            client_email: process.env.LOG_GOOGLE_EMAIL,
+            private_key: process.env.LOG_GOOGLE_PRIVATE_KEY.replace(
+                /\\n/g,
+                "\n"
+            ),
+        });
 
-    await doc.loadInfo();
+        await doc.loadInfo();
 
-    sheet = doc.sheetsByIndex[0];
+        sheet = doc.sheetsByIndex[0];
+    } catch (e) {
+        console.log(e);
+        copyClipboard(JSON.stringify(e));
+    }
 };
 
 const getApi = async (dApp, token, msg) => {
