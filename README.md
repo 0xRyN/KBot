@@ -8,16 +8,15 @@ You will need npm to run this program.
 
 Use `npm i` to install dependencies (discord.js, google-spreadsheet).
 
-**IMPORTANT : Add a config folder and a config.json file inside app like this app/config/config.json**
+**IMPORTANT : YOU NEED TO ADD .env file for API Keys**
 
 Add your Discord / API keys:
 
 ```json
 {
-    "CLIENT_ID": "REPLACE",
-    "GUILD_ID": "REPLACE",
     "API_KEY": "REPLACE",
-    "GOOGLE_API_KEY": "REPLACE"
+    "LOG_GOOGLE_EMAIL": "REPLACE",
+    "LOG_GOOGLE_PRIVATE_KEY": "REPLACE",
 }
 ```
 
